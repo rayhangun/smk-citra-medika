@@ -1,0 +1,433 @@
+:root {
+  --primary: #ff9f1c;
+  --secondary: #00bf63;
+  --bg: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg);
+  color: #212529;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #e9ecef;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo img {
+  height: 3rem;
+  width: auto;
+}
+
+.navbar .navbar-nav a {
+  color: black;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--secondary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: black;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--secondary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/image1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.8) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 4em;
+  color: var(--primary);
+}
+
+.hero .content span {
+  background-color: #fee440;
+  color: black;
+}
+
+.hero .content h3 {
+  font-size: 3em;
+  color: var(--secondary);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  background-color: #fee440;
+  color: black;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* About Section */
+.about,
+.berita,
+.contact {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.berita h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  width: 100%;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 3rem 7% 1.4rem;
+}
+
+.about .row .content p,
+.contact p {
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.about .row .content p span {
+  font-weight: 400;
+}
+
+.about .row .content .proli {
+  display: flex;
+}
+
+.about .row .content .proli .farmasi img,
+.about .row .content .proli .keperawatan img {
+  width: auto;
+  height: 40vh;
+  padding: 0 1rem;
+}
+
+.about .row .content .farmasi h3,
+.about .row .content .keperawatan h3 {
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.about .row .content .farmasi p,
+.about .row .content .keperawatan p {
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+/* Berita Sekolah section */
+.slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 3rem;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 1rem;
+}
+
+.slider-slide {
+  flex: 0 0 calc(33.3% - 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-slide img {
+  max-width: 100%;
+  height: auto;
+  max-height: 800px;
+}
+
+/* Contact Section */
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #00bf63;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid var(--primary);
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: none;
+  color: black;
+}
+
+.contact .row form .input-group textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: none;
+  color: black;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  background-color: var(--bg);
+  color: #212529;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg);
+  text-align: center;
+  padding: 1rem 0 1rem;
+  margin-top: 3rem;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .social a {
+  color: #212529;
+  margin: 1rem;
+}
+
+footer .social a:hover,
+footer .link a:hover {
+  color: var(--secondary);
+}
+
+footer .link {
+  margin-bottom: 1rem;
+}
+
+footer .link a {
+  color: #212529;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: #212529;
+  font-weight: 700;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--secondary);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.3);
+  }
+
+  .navbar .navbar-nav a:hover {
+    color: var(--primary);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .content .proli {
+    flex-wrap: wrap;
+  }
+
+  .about .row .content .proli .farmasi img,
+  .about .row .content .proli .keperawatan img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+    flex-wrap: wrap;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
