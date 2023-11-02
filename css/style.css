@@ -470,4 +470,8 @@ footer .credit a {
   html {
     font-size: 55%;
   }
+
+  .hero .content h1 {
+    font-size: 3.5em;
+  }
 }
