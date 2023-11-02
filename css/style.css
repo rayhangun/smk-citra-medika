@@ -80,6 +80,38 @@ body {
   display: none;
 }
 
+/* Navbar Search Form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: var(--bg);
+  width: 30rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -182,13 +214,21 @@ body {
 
 .about .row .content .proli {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about .row .content .proli .farmasi,
+.about .row .content .proli .keperawatan {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .about .row .content .proli .farmasi img,
 .about .row .content .proli .keperawatan img {
-  width: auto;
-  height: 40vh;
-  padding: 0 1rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .about .row .content .farmasi h3,
@@ -205,6 +245,7 @@ body {
   flex-wrap: wrap;
   margin: 1rem auto;
   max-width: 90%;
+  margin-bottom: 3rem;
 }
 
 /* Berita Sekolah section */
@@ -387,15 +428,14 @@ footer .credit a {
   }
 
   .about .row .content .proli {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
 
   .about .row .content .proli .farmasi img,
   .about .row .content .proli .keperawatan img {
-    height: 24rem;
-    object-fit: cover;
-    object-position: center;
-    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
   }
 
   .about .row .content {
