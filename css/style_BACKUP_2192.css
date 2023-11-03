@@ -145,7 +145,11 @@ body {
 
 .hero .content h1 {
   font-size: 4em;
+<<<<<<< HEAD
+  color: darkorange;
+=======
   color: #ff8c00;
+>>>>>>> 0cbe355d30b59967745823836a9b01072fd5f511
 }
 
 .hero .content span {

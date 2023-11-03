@@ -145,7 +145,7 @@ body {
 
 .hero .content h1 {
   font-size: 4em;
-  color: #ff8c00;
+  color: var(--primary);
 }
 
 .hero .content span {
@@ -469,9 +469,5 @@ footer .credit a {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
-  }
-
-  .hero .content {
-    font-size: 75%;
   }
 }
