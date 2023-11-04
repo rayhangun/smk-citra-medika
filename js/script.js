@@ -34,6 +34,73 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// Mengaktifkan Searh form
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBox = document.getElementById("search-box");
+  const searchResults = document.getElementById("search-results");
+
+  searchBox.addEventListener("input", function () {
+    const query = searchBox.value.trim().toLowerCase();
+
+    // Perform a search based on the query
+    // You can customize this part to match your specific search logic
+    // For this example, we'll filter the dummy data based on title, keyword, and additional content
+    const dummyData = [
+      {
+        title: "Profil Sekolah",
+        id: "about",
+        keyword: "sekolah",
+        content: "Program Keahlian",
+      },
+      {
+        title: "Berita Sekolah",
+        id: "news",
+        keyword: "berita",
+        content: "pengumuman",
+      },
+      {
+        title: "Kontak dan Info PPDB",
+        id: "contact",
+        keyword: "kontak",
+        content: "alamat",
+      },
+    ];
+
+    const filteredResults = dummyData.filter((item) => {
+      const titleMatch = item.title.toLowerCase().includes(query);
+      const keywordMatch = item.keyword.toLowerCase().includes(query);
+      const contentMatch = item.content.toLowerCase().includes(query);
+      return titleMatch || keywordMatch || contentMatch;
+    });
+
+    // Display the search results
+    displayResults(filteredResults);
+  });
+
+  function displayResults(results) {
+    if (results.length > 0) {
+      searchResults.innerHTML = results
+        .map(
+          (result) =>
+            `<a href="#${result.id}" target="_blank" class="result-item">${result.title}</a>`
+        )
+        .join("");
+      searchResults.classList.add("active"); // Show search results
+
+      // Add event listeners to result items
+      const resultItems = document.querySelectorAll(".result-item");
+      resultItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          searchResults.classList.remove("active"); // Hide search results
+        });
+      });
+    } else {
+      searchResults.innerHTML = "<p>No results found</p>";
+      searchResults.classList.remove("active"); // Hide search results
+    }
+  }
+});
+
 // Berita Sekolah
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".slider");

@@ -112,6 +112,37 @@ body {
   margin-right: 1.5rem;
 }
 
+#search-results {
+  background: #fff;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  top: 100%; /* Position below the search input */
+  width: 30rem; /* Match the input width */
+  max-height: 150px; /* Set a maximum height for the results */
+  display: none; /* Initially hidden */
+}
+
+#search-results.active {
+  display: block; /* Show when there are search results */
+}
+
+#search-results a {
+  display: block; /* Display results as block elements */
+  padding: 5px;
+  text-decoration: none; /* Remove underlines from links */
+  color: #212529; /* Set the text color */
+  border-bottom: 1px solid #eee; /* Add a border between results */
+}
+
+#search-results a:last-child {
+  border-bottom: none; /* Remove the border for the last result */
+}
+
+#search-results a:hover {
+  background-color: #eee; /* Add a background color on hover */
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
